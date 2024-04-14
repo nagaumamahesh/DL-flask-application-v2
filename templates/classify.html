@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Model | Classifier</title>
+
+  <link rel="stylesheet" href="/static/assets_1/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee&amp;display=swap">
+  <link rel="stylesheet" href="/static/assets_1/css/Banner-Heading-Image-images.css">
+  <link rel="stylesheet" href="/static/assets_1/css/Navbar-Right-Links-icons.css">
+  <link rel="stylesheet" href="/static/assets_1/css/styles.css">
+
+	<link href="/static/assets_2/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<script src="/static/assets_2/bootstrap/popper.min.js"></script>
+	<script src="/static/assets_2/bootstrap/jquery.min.js"></script>
+	<script src="/static/assets_2/bootstrap/bootstrap.min.js"></script>
+
+	<link rel="stylesheet" href="/static/assets_2/css/model.css">
+	<script src="/static/assets_2/js/model.js" type="text/javascript"></script>
+</head>
+<body>
+  
+  <nav class="navbar navbar-expand-md py-3">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#"><span><strong>Brain Tumor
+                    Classifier</strong></span></a><button data-bs-toggle="collapse" class="navbar-toggler"
+            data-bs-target="#navcol-2">
+            <span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-primary" id="navcol-2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/classify"><strong>Predict</strong></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section>
+  <section class="py-4 py-xl-5">
+      <div class="container">
+          <div
+              class="text-dark bg-light border rounded border-0 border-light d-flex flex-column justify-content-between flex-lg-row p-4 p-md-5">
+              <div class="pb-2 pb-lg-1">
+                  <h2 class="fw-bold mb-2">
+                      Click on the Choose File to Upload
+                  </h2>
+                  <p class="mb-0">Please Upload the MRI image</p>
+              </div>
+              <div class="my-2">
+                <form id="upload-file" method="post" enctype="multipart/form-data">
+                  <label for="imageUpload" class="upload-label">
+                      CHOOSE FILE
+                  </label>
+                  <input type="file" name="file" id="imageUpload" accept=".png, .jpg, .jpeg">
+              </form>
+              </div>
+          </div>
+      </div>
+  </section>
+</section>
+
+<div>
+
+
+    <div class="image-section" style="display:none; width: 600px; height: 400px; margin: auto; text-align: center;">
+        <div class="img-preview">
+            <div id="imagePreview">
+            </div>
+        </div>
+        <div>
+            <button type="button" class="btn btn-primary btn-lg font-monospace fs-4 fw-semibold link-dark text-bg-warning shadow-sm py-2 px-4" id="btn-predict">Predict!</button>
+        </div>
+
+        <div class="loader" style="display:none; text-align: center; margin: auto;"></div>
+
+        <h2 id="result" style="text-transform: capitalize; ">
+            <span> </span>
+        </h2>
+
+    </div>
+
+    <br><br><br><br><br><br><br>
+    <!-- <button><a href="/">Download Report</a></button> -->
+</div>
+
+</div>
+
+
+</body>
+</html>
