@@ -13,7 +13,7 @@ from flask import Flask, render_template, send_file, request, make_response
 
 app = Flask(__name__)
 
-model = load_model(('Model.h5'), custom_objects={'KerasLayer': hub.KerasLayer})
+# model = load_model(('Model.h5'), custom_objects={'KerasLayer': hub.KerasLayer})
 
 
 def model_predict(img_path, loaded_model):
@@ -93,9 +93,9 @@ def upload():
         file_path = os.path.join(
             current_directory, 'uploads', secure_filename(f.filename))
         f.save(file_path)
-        preds = model_predict(file_path, model)
-        result = preds
-        # result = "No Tumor Detected"
+        # preds = model_predict(file_path, model)
+        # result = preds
+        result = "No Tumor Detected"
         pdf_data = generate_report(file_path, result)
         response = make_response(pdf_data)
         response.headers['Content-Type'] = 'application/pdf'
